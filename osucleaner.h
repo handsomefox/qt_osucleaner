@@ -78,4 +78,5 @@ private slots:
     void browse_pressed();
     void delete_pressed();
     void scan_pressed();
+    void on_actionExit_triggered();
 };

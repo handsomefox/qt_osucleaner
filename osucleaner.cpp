@@ -92,3 +92,9 @@ void osucleaner::scan_pressed()
 
 }
 
+
+void osucleaner::on_actionExit_triggered()
+{
+    qApp->exit();
+}
+
