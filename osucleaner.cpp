@@ -47,10 +47,8 @@ void osucleaner::delete_pressed()
     QVector<QString> list;
     list.reserve(results.size());
 
-    for(const auto& res : results){
+    for(const auto& res : results)
         list.push_back(QString::fromStdWString(res.wstring()));
-    }
-
 
     ui->foundFilesLabel->setText("Found files: " + QString::number(0));
     ui->foundFilesSizeLabel->setText("Found files size: " + QString::number(0) + "MB");
@@ -73,28 +71,22 @@ void osucleaner::scan_pressed()
 
    dir_parser.scan_folder();
 
-
    results = dir_parser.scan_results();
 
    QVector<QString> list;
    list.reserve(results.size());
 
-   for(const auto& res : results){
+   for(const auto& res : results)
        list.push_back(QString::fromStdWString(res.wstring()));
-   }
-
 
    ui->foundFilesLabel->setText("Found files: " + QString::number(results.size()));
    ui->foundFilesSizeLabel->setText("Found files size: " + QString::number(dir_parser.get_files_size()) + "MB");
 
    ui->listView->setModel(new QStringListModel(QList<QString>::fromVector(list)));
    ui->progressBar->setValue(100);
-
 }
-
 
 void osucleaner::on_actionExit_triggered()
 {
     qApp->exit();
 }
-

@@ -5,7 +5,6 @@
 #include <QApplication>
 #include <filesystem>
 
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class osucleaner; }
 QT_END_NAMESPACE

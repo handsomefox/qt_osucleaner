@@ -15,12 +15,11 @@ public:
     void delete_scanned_files();
     static void delete_scanned_files(std::vector<std::filesystem::path>&);
     [[nodiscard]] const std::vector<std::filesystem::path>& scan_results() const;
-    double get_files_size() const;
+    [[nodiscard]] double get_files_size() const;
 private:
     std::filesystem::path m_folder_path;
     std::vector<std::filesystem::path> m_scanned_files{};
     std::vector<std::string> m_filtered_types{};
-
     double m_size{ 0 };
 
     static bool is_optional(const std::filesystem::path&, const std::vector<std::string>&);

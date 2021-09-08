@@ -14,6 +14,12 @@ directory_parser::directory_parser(std::filesystem::path folder_path)
 void directory_parser::set_path(const std::filesystem::path & new_path)
 {
     m_folder_path = new_path;
+
+    if (m_folder_path.empty())
+        throw std::exception("[ERROR] Specified path is empty.\n");
+
+    if (!is_directory(m_folder_path))
+        throw std::exception("[ERROR] Specified path is not a directory.\n");
 }
 
 void directory_parser::add_filters(const std::vector<std::string>& list_of_extensions)
