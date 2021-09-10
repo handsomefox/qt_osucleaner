@@ -1,12 +1,15 @@
 #pragma once
 
+#include <QApplication>
 #include <QMainWindow>
 #include <QStyleFactory>
-#include <QApplication>
 #include <filesystem>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class osucleaner; }
+namespace Ui
+{
+    class osucleaner;
+}
 QT_END_NAMESPACE
 
 class osucleaner final : public QMainWindow
@@ -14,7 +17,7 @@ class osucleaner final : public QMainWindow
     Q_OBJECT
 
 public:
-    osucleaner(QWidget* parent = nullptr);
+    osucleaner(QWidget *parent = nullptr);
     ~osucleaner() override;
 
     static void apply_dark_theme()
@@ -41,7 +44,7 @@ public:
     }
 
 private:
-    Ui::osucleaner* ui;
+    Ui::osucleaner *ui;
 
     std::vector<std::filesystem::path> results{};
 
@@ -63,12 +66,12 @@ private:
 
     const std::vector<std::string> background_filter
     {
-      ".png", ".jpg"
+        ".png", ".jpg"
     };
 
     const std::vector<std::string> storyboard_filter
     {
-      ".osb"
+        ".osb"
     };
 
     QString songs_path{};
